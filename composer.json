@@ -1,6 +1,6 @@
 {
     "name": "bantenprov/profil-bpjs",
-    "description": "Portal produk hukum Pemerintah Provinsi Banten",
+    "description": "Proil pengguna BPJS",
     "type": "library",
     "homepage": "https://github.com/bantenprov/profil-bpjs",
     "authors": [{
