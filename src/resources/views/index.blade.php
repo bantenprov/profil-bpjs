@@ -17,7 +17,7 @@
 		@foreach($profils as $profil)
 		<tr>
 			
-			<td>{{ $profil->user_id }}</td>
+			<td>{{ $profil->getUser->name }}</td>
 			<td>{{ $profil->no_bpjs }}</td>
 			<td>{{ $profil->faskes }}</td>
 			<td>{{ $profil->kelas_rawat }}</td>
