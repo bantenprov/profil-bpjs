@@ -39,16 +39,16 @@ class ProfilBpjsController extends Controller
     	]); 
     	if($validator->fails()){ 
     		return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        ProfilBpjsModel::create($request->all());
+        return redirect()->back()->with('message','add success');
     }
 
     public function show($id)
     {
         $profil = ProfilBpjsModel::find($id);
         return view('profil-bpjs::show',compact('profil'));
-    }
-
-        ProfilBpjsModel::create($request->all());
-        return redirect()->back()->with('message','add success');
     }
 
     public function edit($id)
