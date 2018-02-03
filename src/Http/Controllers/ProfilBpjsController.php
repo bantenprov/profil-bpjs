@@ -16,10 +16,17 @@ use Validator;
 class ProfilBpjsController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
 	{
-		$profils = ProfilBpjsModel::all();
-		return view ('profil-bpjs::index',compact('profils'));
+
+        if($request->get('search') != ''){
+            $profils = ProfilBpjsModel::where('no_bpjs','like','%'.$request->get('search').'%')->paginate(10);
+            return view('profil-bpjs::index',compact('profils'));
+        }else{
+            $profils = ProfilBpjsModel::paginate(10);
+            return view('profil-bpjs::index',compact('profils'));
+        }
+
 	}
 
 	 public function create()
