@@ -67,20 +67,32 @@ class ProfilBpjsController extends Controller
 
      public function update(Request $request, $id)
     {	
-
-
-    	$validator = Validator::make($request->all(),[ 
-    		'user_id' => 'required',
-    		'no_bpjs' => 'required', 
-    		'faskes' => 'required', 
-    		'kelas_rawat' => 'required',
+        if($request->old_user_id ==  $request->user_id)
+            {
+                $validator = Validator::make($request->all(),[
+                    'user_id'                => 'required',
+                    'no_bpjs'                => 'required',
+                    'faskes'                 => 'required',
+                    'kelas_rawat'            => 'required'
+                            
+                ]);
+           }
+        else
+            {
+                $validator = Validator::make($request->all(),[
+                    'user_id'               => 'required|unique:profil_npwp,user_id',
+                    'no_bpjs'               => 'required',
+                    'faskes'                => 'required',
+                    'kelas_rawat'           => 'required'
+                                
+                ]);
+             }
     		
-    	]); 
     	if($validator->fails()){ 
     		return redirect()->back()->withErrors($validator)->withInput();
     	}
 
-         ProfilBpjsModel::where('id',$id)->update([
+            ProfilBpjsModel::where('id',$id)->update([
             "user_id" => $request->user_id,
             "no_bpjs" => $request->no_bpjs,
             "faskes" => $request->faskes,
