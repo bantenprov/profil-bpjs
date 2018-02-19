@@ -52,7 +52,7 @@
 							<label for="">Kelas Rawat</label>
 							<input value="{{ $profil->kelas_rawat }}" type="text" name="kelas_rawat" class="form-control input-sm" placeholder="kelas_rawat">
 						</div>									
-						<button type="submit" class="btn btn-default">Submit</button>
+						<button type="submit" class="btn btn-sm btn-default">Submit</button>
 					{!! Form::close() !!}
 				</div>
 			</div>
@@ -60,4 +60,3 @@
 	</div>
 </div>
 @endsection
-
