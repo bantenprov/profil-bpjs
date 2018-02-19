@@ -4,14 +4,14 @@
 <div class="container">
 	<div class="row">		
 		<div class="col-md-12">
-			<a href="{{ route('bpjs.index') }}" class="btn btn-xs btn-primary">Back</a>
+			<a href="{{ route('bpjs.index') }}" class="btn btn-sm btn-primary">Back</a>
 			<br>
 			<br>
 			<div class="panel panel-default">
 				<div class="panel-heading">					
 					Detail Profil Bpjs
 					<span class="pull-right">
-						<a href="{{ route('bpjs.edit',$profil->id) }}" class="bnt btn-xs btn-success"><i class="fa fa-pencil"></i> Edit</a>
+						<a href="{{ route('bpjs.edit',$profil->id) }}" class="bnt btn-sm btn-success"><i class="fa fa-pencil"></i> Edit</a>
 					</span>
 					<div>
 					@if ($errors->any())
